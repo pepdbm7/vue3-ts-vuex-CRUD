@@ -1,9 +1,9 @@
 <template>
-  <div class="nav shadow-md flex items-center py-2 px-4">
+  <nav class="nav shadow-md flex items-center py-2 px-4">
     <router-link class="img_container" :to="{ name: 'Home' }"><img alt="todo logo" :src="require('@/assets/img//postit.svg')" /></router-link>
     <router-link :to="{ name: 'Home' }">Home</router-link>
     <router-link :to="{ name: 'About' }">About</router-link>
-  </div>
+  </nav>
 </template>
 
 <script lang="ts">

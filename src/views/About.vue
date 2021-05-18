@@ -1,8 +1,8 @@
 <template>
   <NavBar />
-  <div class="about flex flex-col p-8 h-screen w-screen mt-12">
-    <h1>This is an about page</h1>
-  </div>
+  <main class="about flex flex-col p-8 h-screen w-screen mt-12">
+    <h2 class="text-3xl text-center p-2 font-bold">This is an about page</h2>
+  </main>
 </template>
 
 <script>

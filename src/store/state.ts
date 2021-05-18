@@ -6,10 +6,10 @@ export type Task = {
 
 export type State = {
   loading: boolean
-  items: Task[]
+  tasks: Task[]
 }
 
 export const state: State = {
   loading: false,
-  items: []
+  tasks: []
 }
