@@ -29,7 +29,8 @@ export default defineComponent({
       const newTask: Task = {
         id: Date.now(),
         text: text.value,
-        completed: false
+        completed: false,
+        isBeingEdited: false
       };
       store.commit(MutationType.CreateTask, newTask);
       text.value = '';
