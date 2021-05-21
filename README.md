@@ -8,6 +8,8 @@ As it is a CRUD, each task can be edited (its text and check/uncheck as Done) an
 
 It uses **vuex-persistedstate** so we can continue in the exact same point we were in case the page crashes as data remains.
 
+You can use the [demo](https://zen-sinoussi-48de0d.netlify.app) !
+
 ## Project setup
 
 ```
@@ -44,6 +46,3 @@ yarn cypress
 yarn lint
 ```
 
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
