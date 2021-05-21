@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center bg-white rounded-md shadow-md my-2 p-1 border-4" :class="completed ? 'border-green-500' : 'border-white'">
+  <div class="task flex items-center bg-white rounded-md shadow-md my-2 p-1 border-4" :class="completed ? 'border-green-500' : 'border-white'">
     <div class="flex-shrink-0 m-1 ml-3 align-middle">
       <input v-model="checkRef" type="checkbox" class="cursor-pointer" @change="editTask()" />
     </div>
