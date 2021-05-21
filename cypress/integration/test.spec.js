@@ -25,23 +25,23 @@ describe('task list', () => {
 
     cy.contains('0 of 1 tasks are completed');
 
-    cy.get('.task > h4').contains(firstTaskText);
+    cy.get('h4').contains(firstTaskText);
   });
 
   it("can edit a task's text", () => {
     const editedText = 'My first task text edited';
 
-    cy.get('.task > h4').click();
+    cy.get('h4').click();
 
-    cy.get('.task > input').type(editedText).type('Cypress.io{enter}');
+    cy.get('.task').find('[type="text"]').type(editedText).type('Cypress.io{enter}');
 
-    cy.get('.task > h4').contains(editedText);
+    cy.get('h4').contains(editedText);
   });
 
   it('can edit a task\'s "completed" status', () => {
     cy.get('.task').should('have.class', 'border-white');
 
-    const checkInput = cy.get('.task > [type="checkbox"]');
+    const checkInput = cy.get('.task').find('[type="checkbox"]');
     checkInput.should('not.be.checked');
     checkInput.check();
 
@@ -53,16 +53,32 @@ describe('task list', () => {
   it("can delete a task's text", () => {
     cy.contains('1 of 1 tasks are completed');
 
-    const deleteButton = cy.get('.task > button').contains('Remove');
+    const deleteButton = cy.get('.task').find('button').contains('Remove');
     deleteButton.click();
 
     cy.contains('0 of 0 tasks are completed');
   });
 });
 
+describe('data persistance', () => {
+  it('data should remain on window reload', () => {
+    const firstTaskText = 'My first task';
+
+    cy.get('[id=addButton]').type(firstTaskText);
+
+    const addButton = cy.get('.bg-green-500').contains('Add');
+    addButton.click();
+
+    cy.reload();
+    cy.wait(2000);
+
+    cy.contains(firstTaskText);
+  });
+});
+
 describe('about page', () => {
   it('Should see about page', () => {
-    const aboutLinkButton = cy.get('nav > a').last().contains('About');
+    const aboutLinkButton = cy.get('nav').find('a').last().contains('About');
     aboutLinkButton.click();
 
     cy.contains('This is an about page');
