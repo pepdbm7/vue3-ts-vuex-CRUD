@@ -19,5 +19,9 @@ export default defineComponent({});
   text-align: center;
   color: $primary-color;
   background-color: $main-bg;
+
+  button {
+    transition: 0.4s all ease-in-out;
+  }
 }
 </style>

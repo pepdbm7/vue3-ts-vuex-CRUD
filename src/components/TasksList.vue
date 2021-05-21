@@ -18,6 +18,7 @@
   </div>
 
   <div v-else>
+    <Filter />
     <p class="text-center my-3 italic">{{ completedCount }} of {{ totalCount }} tasks are completed</p>
     <Task v-for="task in tasks" :key="task" v-bind="task" />
   </div>
@@ -25,15 +26,17 @@
 
 <script lang="ts">
 import { computed, onMounted, defineComponent, onErrorCaptured, ref } from 'vue';
-import { useStore } from '@/store';
+import Filter from './Filter.vue';
 import Task from './Task.vue';
+
+import { useStore } from '@/store';
 import { ActionTypes } from '@/store/actions';
 
 export default defineComponent({
-  components: { Task },
+  components: { Filter, Task },
   setup() {
     const store = useStore();
-    const tasks = computed(() => store.state.tasks);
+    const tasks = computed(() => store.getters.tasksToShow);
 
     const error = ref(null);
     onErrorCaptured((e: any) => {

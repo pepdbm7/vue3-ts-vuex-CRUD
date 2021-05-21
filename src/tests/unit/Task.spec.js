@@ -1,21 +1,7 @@
-import Vuex from 'vuex'
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, createLocalVue } from '@vue/test-utils';
+import Vuex from 'vuex';
 import Helpers from '../helpers';
 import Task from '../../components/Task.vue';
-
-
-const store = /* Vuex store */
-
-const cmp = shallowMount(TheHeader, {
-  global: {
-    plugins: [Vuex],
-
-    // OR:
-    mocks: {
-      $store: store,
-    }
-  }
-})
 
 const localVue = createLocalVue();
 localVue.use(Vuex);

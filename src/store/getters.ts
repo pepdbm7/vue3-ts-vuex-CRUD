@@ -5,6 +5,7 @@ export type Getters = {
   completedCount(state: State): number;
   totalCount(state: State): number;
   tasksBeingEdited(state: State): Task[];
+  tasksToShow(state: State): Task[];
 };
 
 export const getters: GetterTree<State, State> & Getters = {
@@ -16,5 +17,13 @@ export const getters: GetterTree<State, State> & Getters = {
   },
   tasksBeingEdited(state) {
     return state.tasks.filter((task) => task.isBeingEdited === true);
+  },
+  tasksToShow(state) {
+    const allTasks = state.tasks;
+    const filteredTasks = state.filteredTasks;
+    const searchQuery = state.searchQuery;
+
+    if (searchQuery) return filteredTasks;
+    else return allTasks;
   }
 };

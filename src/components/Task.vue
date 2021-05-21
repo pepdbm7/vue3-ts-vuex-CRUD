@@ -15,12 +15,22 @@
         @keydown.enter="onTextChanged()"
         @focusout="onTextChanged()"
       />
-      <h4 v-show="!showInput" class="text-xl text-gray-900 leading-tight cursor-pointer hover:text-gray-500" @click="toggleShowInput()">
+      <h4 v-show="!showInput" class="text-sm md:text-lg text-gray-900 leading-tight cursor-pointer hover:text-gray-500" @click="toggleShowInput()">
         {{ text }}
       </h4>
     </div>
-    <div class="flex-shrink-0">
+    <div class="flex-shrink-0 hidden md:flex">
       <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 rounded" @click="deleteTask()">Remove</button>
+    </div>
+    <div class="flex-shrink-0 md:hidden text-red-500 hover:text-red-700 cursor-pointer">
+      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+        />
+      </svg>
     </div>
   </div>
 </template>

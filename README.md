@@ -1,5 +1,13 @@
 # vue3-vuex-ts-crud
 
+This is a small responsive ToDo application made with **Vue Vuex and Typescript**, and tested with **Jest and Cypress**. We can navigate through a homepage, about page and to we are redirected to an errorpage for any other path we visit.
+
+In the homepage we can see a navbar and a main section. In the main section we can see an input to add new tasks, another to filter tasks and below finally we can see the tasks.
+
+As it is a CRUD, each task can be edited (its text and check/uncheck as Done) and removed.
+
+It uses **vuex-persistedstate** so we can continue in the exact same point we were in case the page crashes as data remains.
+
 ## Project setup
 
 ```
@@ -27,7 +35,7 @@ yarn test:unit
 ### Run your end-to-end tests
 
 ```
-yarn test:e2e
+yarn cypress
 ```
 
 ### Lints and fixes files
@@ -39,17 +47,3 @@ yarn lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-# emobg coding exercise
-
-## Hello adventurer! Clone or fork the repo and good luck!
-
-You are free to (and probably should)
-
-- update or change dependencies
-- define this project's architecture
-- remove extra code given here as example
-
-as long as the main objective given by requirementa is accomplished.
-
-After you are done, please **create a PR** to this repo and we will go through code review (just like you would while implementing a feature)

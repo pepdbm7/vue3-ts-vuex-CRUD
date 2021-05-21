@@ -8,9 +8,13 @@ export type Task = {
 export type State = {
   loading: boolean;
   tasks: Task[];
+  filteredTasks: Task[];
+  searchQuery: string;
 };
 
 export const state: State = {
   loading: false,
-  tasks: []
+  tasks: [],
+  filteredTasks: [],
+  searchQuery: ''
 };

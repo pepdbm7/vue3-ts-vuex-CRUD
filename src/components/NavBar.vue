@@ -2,8 +2,8 @@
   <nav class="nav shadow-md flex items-center py-2">
     <div class="flex w-full max-w-7xl mx-auto px-10">
       <router-link class="img_container" :to="{ name: 'Home' }"><img alt="todo logo" :src="require('@/assets/img//postit.svg')" /></router-link>
-      <router-link :to="{ name: 'Home' }">Home</router-link>
-      <router-link :to="{ name: 'About' }">About</router-link>
+      <router-link class="text-sm md:text-lg" :to="{ name: 'Home' }">Home</router-link>
+      <router-link class="text-sm md:text-lg" :to="{ name: 'About' }">About</router-link>
     </div>
   </nav>
 </template>
